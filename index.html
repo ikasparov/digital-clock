@@ -15,7 +15,7 @@
     <div id="time3"></div>
 
     <script>
-      // ****************** OPTION 1 (Bad)
+// ****************** OPTION 1 (Bad)
       setInterval(() => {
         const date = new Date();
 
@@ -31,7 +31,7 @@
       }, 1000);
 
 
-      // ****************** OPTION 2
+// ****************** OPTION 2
       setInterval(() => {
         const date = new Date();
 
@@ -47,11 +47,15 @@
       }, 1000);
 
 
-      // ****************** OPTION 3
+// ****************** OPTION 3
       setInterval(() => {
+        // You can use any location you want
         document.getElementById('time3').innerText =
-          new Date().toLocaleTimeString('ru');
-      }, 1000)
+          new Date().toLocaleTimeString('ru-RU');
+      }, 1000);
+
+      // Also you can change the clock format from browser (user's browser current location)
+      // new Date().toLocaleTimeString(navigator.language);
     </script>
   </body>
 </html>
