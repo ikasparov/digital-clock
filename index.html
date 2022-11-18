@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website Digital Clock</title>
+  </head>
+  <body>
+    <div id="time1"></div>
+    <hr>
+    <div id="time2"></div>
+    <hr>
+    <div id="time3"></div>
+
+    <script>
+      // ****************** OPTION 1 (Bad)
+      setInterval(() => {
+        const date = new Date();
+
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        document.getElementById('time1').innerText = [
+          hours,
+          minutes,
+          seconds
+        ].join(':');
+      }, 1000);
+
+
+      // ****************** OPTION 2
+      setInterval(() => {
+        const date = new Date();
+
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        document.getElementById('time2').innerText = [
+          hours < 10 ? '0' + hours : hours,
+          minutes < 10 ? '0' + minutes : minutes,
+          seconds < 10 ? '0' + seconds : seconds,
+        ].join(':');
+      }, 1000);
+
+
+      // ****************** OPTION 3
+      setInterval(() => {
+        document.getElementById('time3').innerText =
+          new Date().toLocaleTimeString('ru');
+      }, 1000)
+    </script>
+  </body>
+</html>
